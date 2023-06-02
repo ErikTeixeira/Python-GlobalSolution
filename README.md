@@ -1,5 +1,6 @@
 Python - GlobalSolution
 
+
 99533 - Allesson Augusto Silva Perru Oliveira
 
 552178 - Cauã Mongs de Borba
@@ -9,6 +10,7 @@ Python - GlobalSolution
 551456 - Guilherme Naoki Hirayama
 
 98912 - Leonardo Gonçalves da Costa Santos
+
 
 
 Nosso objetivo é desenvolver um website que conscientize e eduque sobre estratégias para lidar com a escassez de alimentos e promova a adoção da agricultura sustentável, focando nas necessidades das pessoas que precisam de alimento. O site oferecerá aos usuários a opção de fazer login e fornecer detalhes sobre sua região e necessidades alimentares, estabelecendo assim dois tipos de "usuários": aqueles que desejam fazer doações e aqueles que necessitam delas.
