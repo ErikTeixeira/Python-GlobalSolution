@@ -1,9 +1,13 @@
 Python - GlobalSolution
 
 99533 - Allesson Augusto Silva Perru Oliveira
+
 552178 - Cauã Mongs de Borba
+
 551377 - Erik Teixeira Barbosa
+
 551456 - Guilherme Naoki Hirayama
+
 98912 - Leonardo Gonçalves da Costa Santos
 
 
