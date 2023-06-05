@@ -15,7 +15,7 @@ def cadastro_sim():
 
     return [email, senha]
 
-#Se o usuário colocar "N", ele precisa fazer um cadastro com email, senha, cep
+#Se o usuário colocar "N", ele precisa fazer um cadastro com email, senha, cep, cpf
 def cadastro_nao():
     email = input("Digite seu email: ")
     senha = input("Digite a senha que você vai utilizar: ")
