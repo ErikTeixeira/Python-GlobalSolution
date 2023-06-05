@@ -63,9 +63,16 @@ def doacao_dinheiro():
 #Sé o usuário escolher ser donatário ele vai ter que responder algumas perguntas para verificar se ele pode receber
 def donatario():
     emprego = input("Você está trabalhando? (S/N) ")
+    while emprego != "S" and emprego != "N":
+        emprego = input("Digite apenas 'S' sé você estiver trabalhando e 'N' sé você não está trabalhando: ")
+
     familia = int(input("Digite quantas pessoas moram com você: "))
+
     renda = float(input("Digite sua renda mensal, sé não tiver renda coloque '0': "))
+    
     moradia = input("Você possui moradia? (S/N) ")
+    while moradia != "S" and moradia != "N":
+        moradia = input("Digite apenas 'S' sé você tiver moradia e 'N' sé você não tiver moradia: ")
 
     return [emprego,familia,renda,moradia]
 
