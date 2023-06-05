@@ -48,7 +48,7 @@ def doador():
 
 #Usuário doar alimentos
 def doacao_alimento():
-    doar = input("Você escolheu doar alimentos, Você pode doar alimentos não perecíveis como: \nArroz, Macarrão, Feijão, Farinha de trigo, Açúcar, Sal.\nEntre outros alimentos, no seu email uma mensagem será enviada para você saber como enviar. Muito obrigado por estar querendo ser um doador.")
+    doar = input("Você escolheu doar alimentos, Você pode doar alimentos não perecíveis como: \nArroz, Macarrão, Feijão, Farinha de trigo, Açúcar, Sal.\nEntre outros alimentos, no seu email uma mensagem será enviada para você saber como enviar.\nMuito obrigado por estar querendo ser um doador.")
 
     return doar
 
@@ -57,6 +57,39 @@ def doacao_dinheiro():
     doar = float(input("Você escolheu doar dinheiro, quanto você vai querer doar? "))
 
     return doar
+
+
+#Sé o usuário escolher ser donatário ele vai ter que responder algumas perguntas para verificar se ele pode receber
+def donatario():
+    emprego = input("Você está trabalhando? (S/N) ")
+    familia = int(input("Digite quantas pessoas moram com você: "))
+    renda = float(input("Digite sua renda mensal, sé não tiver renda coloque '0': "))
+    moradia = input("Você possui moradia? (S/N) ")
+
+    return [emprego,familia,renda,moradia]
+
+#Sé o usuário digitar "S" no "emprego" ele tem que falar qual o tipo de trabalho dele
+def empregado():
+    tipo_trabalho = input("Como é o seu trabalho hoje em dia? (autônomo, assalariado, temporário ...) ")
+    print("Ok, obrigado pela sua resposta!")
+
+    return tipo_trabalho
+
+#Sé o usuário digitar "S" na "moradia" ele tem que falar qual o tipo de moradia dele
+def residencia():
+    tipo_moradia = input("Como é a sua moradia hoje em dia? (alugada, própria ...) ")
+    print("Ok, obrigado pela sua resposta!")
+
+    return tipo_moradia
+
+#Sé o usuário ser apto a receber a doação ele vem para está função
+def pode_receber():
+    print("Você é apto a receber doações")
+
+#Sé o usuário não ser apto a receber a doação ele vem para está função
+def nao_receber():
+    print("Desculpa, mas você não é apto a receber doações")
+
 
 
 #Sistema principal
@@ -74,6 +107,19 @@ if tipo_usuario == 1:
         doacao_alimento()
     elif escolha == 2:
         doacao_dinheiro()
-# elif tipo_usuario == 2:
-#     donatário()
+elif tipo_usuario == 2:
+    dados_donatario = donatario()
 
+    empregabilidade = dados_donatario[0]
+    if empregabilidade == "S":
+        empregado()
+
+    moradias = dados_donatario[3]
+    if moradias == "S":
+        residencia()
+
+    renda_mensal = dados_donatario[2]
+    if renda_mensal <= 1500:
+        pode_receber()
+    elif renda_mensal > 1500:
+        nao_receber()
