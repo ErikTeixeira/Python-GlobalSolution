@@ -19,9 +19,10 @@ def cadastro_sim():
 def cadastro_nao():
     email = input("Digite seu email: ")
     senha = input("Digite a senha que você vai utilizar: ")
-    cep =input("Digite o seu CEP: ")
+    cep = input("Digite o seu CEP: ")
+    cpf = input("Digite o seu CPF: ")
 
-    return [email,senha,cep]
+    return [email,senha,cep,cpf]
 
 #O usuário escolhe se ele vai ser um doador ou um donatário 
 def escolher_tipo_usuario():
