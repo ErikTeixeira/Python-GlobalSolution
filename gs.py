@@ -3,7 +3,7 @@ def cadastro():
     cadastro = input("Você já possui cadastro? (S/N) ")
 
     while cadastro != "S" and cadastro != "N":
-        cadastro = input("Escolha inválida. Por favor, digite 'S' sé você já possui um cadastro ou 'N' sé você não possui: ")
+        cadastro = input("Escolha inválida. Por favor, digite 'S' se você já possui um cadastro ou 'N' se você não possui: ")
 
     return cadastro
 
@@ -13,15 +13,16 @@ def cadastro_sim():
     email = input("Digite seu email: ")
     senha = input("Digite sua senha: ")
 
-    return [email,senha]
+    return [email, senha]
 
-#Se o usuário colocar "N", ele precisa fazer um cadastro com emal, senha, cep
+#Se o usuário colocar "N", ele precisa fazer um cadastro com email, senha, cep, cpf
 def cadastro_nao():
     email = input("Digite seu email: ")
     senha = input("Digite a senha que você vai utilizar: ")
-    cep =input("Digite o seu CEP: ")
+    cep = input("Digite o seu CEP: ")
+    cpf = input("Digite o seu CPF: ")
 
-    return [email,senha,cep]
+    return [email, senha, cep, cpf]
 
 #O usuário escolhe se ele vai ser um doador ou um donatário 
 def escolher_tipo_usuario():
@@ -32,15 +33,15 @@ def escolher_tipo_usuario():
 
 
     if tipo_usuario == 1:
-        print("Você escolheu ser um doador, obrigado por nós ajudar!")
+        print("Você escolheu ser um doador, obrigado por nos ajudar!")
     elif tipo_usuario == 2:
         print("Você escolheu ser um donatário, ajudaremos você em breve!")
 
     return tipo_usuario
 
-#Sé o usuário escolher ser doador ele vai escolher se quer escolher dinheiro ou alimento
+#Se o usuário escolher ser doador ele vai escolher se quer doar alimentos ou dinheiro
 def doador():
-    escolha = int(input("Você vai querer doar alimentos ou dinhero: (1/2) "))
+    escolha = int(input("Você vai querer doar alimentos ou dinheiro? (1/2) "))
     while escolha != 1 and escolha != 2:
         escolha = int(input("Escolha inválida. Por favor, digite '1' para doar alimentos ou '2' para doar dinheiro: "))
 
@@ -48,49 +49,54 @@ def doador():
 
 #Usuário doar alimentos
 def doacao_alimento():
-    doar = input("Você escolheu doar alimentos, Você pode doar alimentos não perecíveis como: \nArroz, Macarrão, Feijão, Farinha de trigo, Açúcar, Sal.\nEntre outros alimentos, no seu email uma mensagem será enviada para você saber como enviar.\nMuito obrigado por estar querendo ser um doador.")
+    doar = input("Você escolheu doar alimentos. Você pode doar alimentos não perecíveis como: \nArroz, Macarrão, Feijão, Farinha de trigo, Açúcar, Sal.\nEntre outros alimentos. No seu email, uma mensagem será enviada para você saber como enviar.\nMuito obrigado por estar querendo ser um doador.")
 
     return doar
 
 #Usuário doar dinheiro
 def doacao_dinheiro():
-    doar = float(input("Você escolheu doar dinheiro, quanto você vai querer doar? "))
+    doar = float(input("Você escolheu doar dinheiro. Quanto você vai querer doar? "))
 
     return doar
 
 
-#Sé o usuário escolher ser donatário ele vai ter que responder algumas perguntas para verificar se ele pode receber
+#Se o usuário escolher ser donatário, ele vai ter que responder algumas perguntas para verificar se ele pode receber
 def donatario():
     emprego = input("Você está trabalhando? (S/N) ")
+    while emprego != "S" and emprego != "N":
+        emprego = input("Digite apenas 'S' se você estiver trabalhando e 'N' se você não está trabalhando: ")
+
     familia = int(input("Digite quantas pessoas moram com você: "))
-    renda = float(input("Digite sua renda mensal, sé não tiver renda coloque '0': "))
+
+    renda = float(input("Digite sua renda mensal. Se não tiver renda, coloque '0': "))
+    
     moradia = input("Você possui moradia? (S/N) ")
+    while moradia != "S" and moradia != "N":
+        moradia = input("Digite apenas 'S' se você tiver moradia e 'N' se você não tiver moradia: ")
 
-    return [emprego,familia,renda,moradia]
+    return [emprego, familia, renda, moradia]
 
-#Sé o usuário digitar "S" no "emprego" ele tem que falar qual o tipo de trabalho dele
+#Se o usuário digitar "S" em "emprego", ele tem que falar qual o tipo de trabalho dele
 def empregado():
     tipo_trabalho = input("Como é o seu trabalho hoje em dia? (autônomo, assalariado, temporário ...) ")
     print("Ok, obrigado pela sua resposta!")
 
     return tipo_trabalho
 
-#Sé o usuário digitar "S" na "moradia" ele tem que falar qual o tipo de moradia dele
+#Se o usuário digitar "S" em "moradia", ele tem que falar qual o tipo de moradia dele
 def residencia():
     tipo_moradia = input("Como é a sua moradia hoje em dia? (alugada, própria ...) ")
     print("Ok, obrigado pela sua resposta!")
 
     return tipo_moradia
 
-#Sé o usuário ser apto a receber a doação ele vem para está função
+#Se o usuário for apto a receber a doação, ele vem para esta função
 def pode_receber():
     print("Você é apto a receber doações")
 
-#Sé o usuário não ser apto a receber a doação ele vem para está função
+#Se o usuário não for apto a receber a doação, ele vem para esta função
 def nao_receber():
-    print("Desculpa, mas você não é apto a receber doações")
-
-
+    print("Desculpe, mas você não é apto a receber doações")
 
 #Sistema principal
 tem_cadastro = cadastro()
